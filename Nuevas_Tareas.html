@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nueva Tarea - Djama</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <div class="page-grid" style="grid-template-columns: 1fr;">
+        <main style="padding: 20px;">
+            <section class="tasks-card" style="max-width: 600px; margin: 0 auto;">
+                <h2>Crear Nueva Tarea</h2>
+
+                <form id="taskForm">
+                    <label for="title">¿Qué necesitas hacer?</label>
+                    <input id="title" name="title" type="text" required placeholder="nombre de la tarea">
+
+                    <label for="date">Fecha</label>
+                    <input id="date" name="date" type="date">
+
+                    <label for="time">Hora</label>
+                    <input id="time" name="time" type="time">
+
+                    <label for="priority">Prioridad</label>
+                    <select id="priority" name="priority">
+                        <option value="baja">Baja</option>
+                        <option value="media">Media</option>
+                        <option value="alta">Alta</option>
+                    </select>
+
+                    <label for="notes">Notas (opcional)</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Añade detalles..."></textarea>
+
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <button type="submit" class="btn-primary">Guardar Tarea</button>
+                        <a href="index.html" class="btn-chip" style="text-decoration: none; padding: 10px 20px;">Volver
+                            al Inicio</a>
+                    </div>
+                </form>
+
+                <div id="saveMessage" style="margin-top: 15px; color: #27ae60; display: none; font-weight: bold;">✓
+                    Tarea guardada correctamente</div>
+            </section>
+        </main>
+    </div>
+
+    <script src="tasks.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ayuda - Djama</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="page-grid" style="grid-template-columns: 1fr;">
+    <main style="padding: 20px;">
+      <section class="tasks-card" style="max-width: 600px; margin: 0 auto;">
+        <h2>¿Necesitas Ayuda?</h2>
+        <p>Encuentra respuestas a tus dudas y contacta con nosotros.</p>
+
+        <h3 style="margin-top: 20px; margin-bottom: 10px;">Preguntas Frecuentes</h3>
+        <details style="margin-bottom: 10px;">
+          <summary style="cursor: pointer; font-weight: bold;">¿Cómo crear una tarea?</summary>
+          <p style="padding-left: 20px; margin-top: 10px;">Ve a <a href="Nuevas_Tareas.html">Nueva Tarea</a> y completa el formulario con el nombre, fecha, hora, prioridad y notas.</p>
+        </details>
+
+        <details style="margin-bottom: 10px;">
+          <summary style="cursor: pointer; font-weight: bold;">¿Dónde veo mis recompensas?</summary>
+          <p style="padding-left: 20px; margin-top: 10px;">En el panel derecho del inicio verás tu progreso semanal y recompensas disponibles.</p>
+        </details>
+
+        <details style="margin-bottom: 10px;">
+          <summary style="cursor: pointer; font-weight: bold;">¿Cómo editar o eliminar una tarea?</summary>
+          <p style="padding-left: 20px; margin-top: 10px;">Haz clic en una tarea para editar o eliminarla. (Próximamente)</p>
+        </details>
+
+        <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+
+        <h3 style="margin-bottom: 10px;">Formulario de Contacto</h3>
+        <p>Envíanos tu consulta y nos pondremos en contacto pronto.</p>
+
+        <form id="helpForm"  >
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" required placeholder="Tu nombre">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="tu@correo.com">
+
+          <label for="subject">Asunto</label>
+          <input id="subject" name="subject" type="text" required placeholder="¿En qué podemos ayudarte?">
+
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Escribe tu consulta..."></textarea>
+
+          <label for="file">Adjuntar archivo (opcional)</label>
+          <input id="file" name="attachment" type="file" accept="image/*,.pdf,.doc,.docx">
+          <p style="font-size: 12px; color: #999;">Formatos: imágenes, PDF, DOC/DOCX</p>
+
+          <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <button type="submit" class="btn-primary">Enviar</button>
+            <a href="index.html" class="btn-chip" style="text-decoration: none; padding: 10px 20px;">Volver al Inicio</a>
+          </div>
+        </form>
+
+        <div id="helpMessage" style="margin-top: 15px; color: #27ae60; display: none; font-weight: bold;"></div>
+      </section>
+    </main>
+  </div>
+  <script src="tasks.js"></script>
+</body>
+
+</html>

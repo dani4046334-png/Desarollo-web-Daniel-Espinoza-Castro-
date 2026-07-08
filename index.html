@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djama - Organizador de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="imgs" href="imgs/cafe.jpg"></link>
+  
+</head>
+
+<body>
+    <div class="page-grid">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-mark">D</div>
+                <div>
+                    <p class="brand-name">Djama</p>
+                    <p class="brand-tag">Organiza tu día</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a class="nav-link active" href="index.html"><span class="nav-icon">🏠</span> Inicio</a>
+                <a class="nav-link" href="Nuevas_Tareas.html"><span class="nav-icon">➕</span> Nueva Tarea</a>
+                <a class="nav-link" href="ayuda.html"><span class="nav-icon">❓</span> Ayuda</a>
+            </nav>
+
+            <div class="sidebar-card">
+                <div class="sidebar-card-image">"
+                    <img src="imgs/cafe.jpg" class="img01"  alt="170px" width="170px">
+                </div>
+                <div class="sidebar-card-copy">
+                    <p>Organiza tu día, logra tus metas y disfruta tu tiempo.</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="summary-card">
+                <div class="summary-header">
+                    <div>
+                        <div class="summary-title">RESUMEN DE HOY</div>
+                        <div class="summary-subtitle">Lunes 24 de Junio</div>
+                    </div>
+                </div>
+
+                <div class="summary-stats">
+                    <div class="stat-block">
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Tareas Pendientes</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Completadas</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-value">0 pts</div>
+                        <div class="stat-label">Puntos Totales</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tasks-card">
+                <div class="card-header">
+                    <h2>Mis Tareas</h2>
+                </div>
+                <ul id="taskList" class="task-list">
+                    <li>
+                        <span class="task-icon">📚</span>
+                        <span class="task-name">ninguna aun</span>
+
+                    </li>
+                    <li>
+                        <span class="task-icon">📖</span>
+                        <span class="task-name">Hacer tarea de historia</span>
+                        <span class="task-time">15:00</span>
+                    </li>
+                </ul>
+                <a href="Nuevas_Tareas.html" class="btn-primary">+ Crear Nueva Tarea</a>
+            </section>
+
+            <section class="calm-panel">
+                <div class="calm-left">
+                    <div class="calm-icon">🧘</div>
+                    <div>
+                        <div class="calm-title">Modo Calma</div>
+                        <div class="calm-text">Relájate y concéntrate en una tarea a la vez</div>
+                    </div>
+                </div>
+                <button class="btn-secondary">Activar</button>
+            </section>
+        </main>
+
+        <aside class="right-panel">
+            <div class="info-card">
+                <div class="info-card-header">
+                    <span class="badge-yellow">🔔</span>
+                    <div>
+                        <div class="card-label">Próximo Recordatorio</div>
+                        <div class="card-title">Sin tareas</div>
+                        <div class="card-meta"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-label">Progreso Semanal</div>
+                <div class="card-title">0/0 Tareas Completadas</div>
+                <div class="progress-bar">
+                    <span style="width: 0%"></span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-label">Tu Recompensa</div>
+                <div class="card-title">⭐ 1 Hora Libre</div>
+                <div class="progress-bar">
+                    <span style="width: 0%"></span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-label">¿Necesitas Ayuda?</div>
+                <div class="card-title">Visita nuestra sección de ayuda</div>
+                <a href="ayuda.html" class="btn-chip">Ir a Ayuda</a>
+            </div>
+        </aside>
+    </div>
+    <script src="tasks.js"></script>
+</body>
+
+</html>
