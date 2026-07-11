@@ -21,7 +21,7 @@
         saveTasks(updatedTasks);
     }
 
-    // Called from Nuevas_Tareas.html
+    
     function initForm() {
         const form = document.getElementById('taskForm');
         if (!form) return;
@@ -118,6 +118,63 @@
             .replace(/'/g, '&#039;');
     }
 
+     
+
+    function askNotificationPermission() {
+        if (!('Notification' in window)) return;
+        if (Notification.permission === 'default') {
+            Notification.requestPermission();
+        }
+    }
+
+    function showTaskNotification(task) {
+        if (!('Notification' in window)) return;
+        if (Notification.permission !== 'granted') return;
+
+        const n = new Notification('⏰ ' + task.title, {
+            body: task.notes ? task.notes : 'Es hora de tu tarea',
+            icon: 'imgs/cafe.jpg',
+            tag: 'task-' + task.id
+        });
+
+        n.onclick = function () {
+            window.focus();
+            n.close();
+        };
+    }
+
+    function checkDueTasks() {
+        if (!('Notification' in window)) return;
+        if (Notification.permission !== 'granted') return;
+
+        const tasks = getTasks();
+        if (tasks.length === 0) return;
+
+        const now = new Date();
+        let changed = false;
+
+        tasks.forEach(t => {
+            if (!t.date || !t.time || t.notified) return;
+
+            const dueDate = new Date(t.date + 'T' + t.time);
+            
+            const diffMs = now - dueDate;
+            if (diffMs >= 0 && diffMs < 60000) {
+                showTaskNotification(t);
+                t.notified = true;
+                changed = true;
+            }
+        });
+
+        if (changed) saveTasks(tasks);
+    }
+
+    function initNotifications() {
+        askNotificationPermission();
+        checkDueTasks();
+        setInterval(checkDueTasks, 30000); 
+    }
+
     window.DJAMA = window.DJAMA || {};
     window.DJAMA.initForm = initForm;
     window.DJAMA.renderTasks = renderTasks;
@@ -126,6 +183,7 @@
         initForm();
         initHelpForm();
         renderTasks();
+        initNotifications();
     });
 
 })();
